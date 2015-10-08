@@ -16,7 +16,9 @@ extendReactClass = (Component, defaultStyles, options) => {
             let renderResult,
                 styles;
 
-            if (this.props.styles) {
+            if(this.state.styles) {
+                styles = this.state.styles;
+            } else if (this.props.styles) {
                 styles = this.props.styles;
             } else if (_.isObject(defaultStyles)) {
                 this.props = _.assign({}, this.props, {

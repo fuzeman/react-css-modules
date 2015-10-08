@@ -54,7 +54,9 @@ extendReactClass = function (Component, defaultStyles, options) {
                 var renderResult = undefined,
                     styles = undefined;
 
-                if (this.props.styles) {
+                if (this.state.styles) {
+                    styles = this.state.styles;
+                } else if (this.props.styles) {
                     styles = this.props.styles;
                 } else if ((0, _lodashLangIsObject3['default'])(defaultStyles)) {
                     this.props = (0, _lodashObjectAssign3['default'])({}, this.props, {
